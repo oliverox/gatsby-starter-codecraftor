@@ -1,0 +1,13 @@
+import React from 'react';
+import 'normalize.css';
+import Layout from '../components/layout';
+
+const BlankPageTemplate = () => {
+  return (
+    <Layout>
+      <div>Hello World!</div>
+    </Layout>
+  );
+}
+
+export default BlankPageTemplate;
