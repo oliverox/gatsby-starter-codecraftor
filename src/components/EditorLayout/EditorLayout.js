@@ -35,10 +35,7 @@ const EditorLayout = ({ children }) => (
               { name: 'keywords', content: 'sample, something' },
             ]}
           >
-            <html
-              lang="en"
-              className={styles.html}
-            />
+            <html lang="en" className={styles.html} />
             <body className={styles.body} />
           </Helmet>
           <Navbar>
@@ -53,7 +50,7 @@ const EditorLayout = ({ children }) => (
               />
             </NavbarGroup>
           </Navbar>
-          <div>{children}</div>
+          <div className={styles.editorContainer}>{children}</div>
         </>
       )
     }}
