@@ -1,7 +1,8 @@
 import React from 'react'
 import 'normalize.css'
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-import '@blueprintjs/core/lib/css/blueprint.css';
+import 'typeface-montserrat'
+import '@blueprintjs/icons/lib/css/blueprint-icons.css'
+import '@blueprintjs/core/lib/css/blueprint.css'
 
 import { EditorLayout } from 'components'
 
@@ -42,11 +43,11 @@ const CodecraftorPage = () => {
         <div
           style={{
             flex: 1,
-            backgroundColor: 'yellow',
             height: '100%',
           }}
         >
           <iframe
+            style={{ backgroundColor: '#fff' }}
             title="codecraftor-editor"
             width="100%"
             height="100%"

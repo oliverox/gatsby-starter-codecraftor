@@ -12,7 +12,7 @@ import {
   NavbarHeading,
 } from '@blueprintjs/core'
 
-import './EditorLayout.css'
+import styles from './EditorLayout.module.css'
 
 const EditorLayout = ({ children }) => (
   <StaticQuery
@@ -25,28 +25,34 @@ const EditorLayout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Navbar>
-          <NavbarGroup>
-            <NavbarHeading>Codecraftor</NavbarHeading>
-            <NavbarDivider />
-            <Button className={Classes.MINIMAL} icon="home" text="Home" />
-            <Button className={Classes.MINIMAL} icon="document" text="Files" />
-          </NavbarGroup>
-        </Navbar>
-        <div>{children}</div>
-      </>
-    )}
+    render={data => {
+      return (
+        <>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: 'description', content: 'Sample' },
+              { name: 'keywords', content: 'sample, something' },
+            ]}
+          >
+            <html lang="en" className={styles.html} />
+          </Helmet>
+          <Navbar>
+            <NavbarGroup>
+              <NavbarHeading>Codecraftor</NavbarHeading>
+              <NavbarDivider />
+              <Button className={Classes.MINIMAL} icon="home" text="Home" />
+              <Button
+                className={Classes.MINIMAL}
+                icon="document"
+                text="Files"
+              />
+            </NavbarGroup>
+          </Navbar>
+          <div>{children}</div>
+        </>
+      )
+    }}
   />
 )
 
