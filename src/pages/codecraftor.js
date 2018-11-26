@@ -1,6 +1,9 @@
 import React from 'react'
+import 'normalize.css'
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
 
-import { Layout } from 'components'
+import { EditorLayout } from 'components'
 
 const CodecraftorPage = () => {
   const onDragStart = e => {
@@ -8,8 +11,7 @@ const CodecraftorPage = () => {
     console.log('drag started', e)
   }
   return (
-    <Layout>
-      <h1>Codecraftor</h1>
+    <EditorLayout>
       <div
         style={{
           display: 'flex',
@@ -52,7 +54,7 @@ const CodecraftorPage = () => {
           />
         </div>
       </div>
-    </Layout>
+    </EditorLayout>
   )
 }
 

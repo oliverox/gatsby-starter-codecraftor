@@ -4,16 +4,19 @@ const { createFilePath } = require('gatsby-source-filesystem')
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "components"],
+      modules: [path.resolve(__dirname, 'src'), 'components'],
     },
   })
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === 'File') {
+  if (
+    node.internal.type === 'File' &&
+    node.sourceInstanceName === 'pagesJson'
+  ) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
-    console.log('Creating node field for', node.name)
+    console.log('> Creating slug field for node:', node.name)
     createNodeField({
       node,
       name: 'slug',
@@ -38,13 +41,17 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      result.data.allFile.edges.forEach(({ node }) => {
+      const filtered = result.data.allFile.edges.filter(
+        ({ node }) => node.fields && node.fields.slug
+      )
+      filtered.forEach(({ node }) => {
+        console.log('> Creating page:', node.fields.slug)
         createPage({
           path: node.fields.slug,
           component: path.resolve('./src/templates/blank-page.js'),
           context: { slug: node.fields.slug },
         })
-      });
+      })
       resolve()
     })
   })

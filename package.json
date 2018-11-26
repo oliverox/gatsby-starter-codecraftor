@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Oliver Oxenham <oliver.oxenham@gmail.com>",
   "dependencies": {
+    "@blueprintjs/core": "^3.9.0",
     "gatsby": "^2.0.55",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.10",

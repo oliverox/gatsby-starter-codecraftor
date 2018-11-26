@@ -1,10 +1,17 @@
 const developMiddleware = require('./mw')
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Codecraftor - Craft your site visually',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pagesJson`,
+        path: `${__dirname}/src/pagesJson`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,13 +24,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
+        name: 'gatsby-starter-codecraftor',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#364699',
+        theme_color: '#FCD303',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/codecraftor.png',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
