@@ -1,4 +1,4 @@
-const developMiddleware = require('./mw');
+const developMiddleware = require('./mw')
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
@@ -30,5 +30,5 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-  developMiddleware
+  developMiddleware,
 }
