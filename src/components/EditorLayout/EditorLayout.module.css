@@ -1,4 +1,6 @@
 .html {
-  font-family: 'Montserrat', sans-serif;
   background-color: red;
+}
+.body {
+  font-family: 'Montserrat', sans-serif;
 }

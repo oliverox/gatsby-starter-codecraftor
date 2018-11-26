@@ -35,7 +35,11 @@ const EditorLayout = ({ children }) => (
               { name: 'keywords', content: 'sample, something' },
             ]}
           >
-            <html lang="en" className={styles.html} />
+            <html
+              lang="en"
+              className={styles.html}
+            />
+            <body className={styles.body} />
           </Helmet>
           <Navbar>
             <NavbarGroup>
