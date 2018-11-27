@@ -2,22 +2,25 @@
   "pageTitle": "Home page",
   "ui": "blueprintJS",
   "globalCss": {},
-  "components": {
-    "root": {
-      "componentName": "HeaderContainer",
-      "props": {},
-      "children": ["heading001", "heading002"]
-    },
-    "heading001": {
+  "root": {
+    "componentName": "HeaderContainer",
+    "props": {},
+    "children": ["heading001", "heading002", "container0011"]
+  },
+  "components": [
+    {
+      "id": "heading001",
       "componentName": "Heading",
       "props": {
         "text": "Hello World",
         "type": "h1",
-        "style": {}
-      },
-      "children": []
+        "style": {
+          "color": "red"
+        }
+      }
     },
-    "heading002": {
+    {
+      "id": "heading002",
       "componentName": "Heading",
       "props": {
         "text": "This is my subtitle",
@@ -25,8 +28,26 @@
         "style": {
           "color": "hotpink"
         }
+      }
+    },
+    {
+      "id": "container001",
+      "componentName": "Container",
+      "props": {
+        "style": {
+          "width": 500,
+          "height": 500,
+          "backgroundColor": "red"
+        }
       },
-      "children": []
+      "children": ["span001"]
+    },
+    {
+      "id": "span001",
+      "componentName": "Span",
+      "props": {
+        "text": "I am a span inside a red container"
+      }
     }
-  }
+  ]
 }

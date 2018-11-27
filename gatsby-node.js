@@ -13,10 +13,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (
     node.internal.type === 'File' &&
-    node.sourceInstanceName === 'pagesJson'
+    node.sourceInstanceName === 'pagesMeta'
   ) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
-    console.log('> Creating slug field for node:', node.name)
+    console.log('>> Creating slug field for node:', node.name)
     createNodeField({
       node,
       name: 'slug',
@@ -49,7 +49,9 @@ exports.createPages = ({ graphql, actions }) => {
         createPage({
           path: node.fields.slug,
           component: path.resolve('./src/templates/blank-page.js'),
-          context: { slug: node.fields.slug },
+          context: { 
+            slug: node.fields.slug,
+          },
         })
       })
       resolve()

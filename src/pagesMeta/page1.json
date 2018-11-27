@@ -1,3 +1,23 @@
 {
-  "pageTitle": "Page One"
+  "pageTitle": "Page One...",
+  "ui": "blueprintJS",
+  "globalCss": {},
+  "root": {
+    "componentName": "HeaderContainer",
+    "props": {},
+    "children": ["heading001"]
+  },
+  "components": [
+    {
+      "id": "heading001",
+      "componentName": "Heading",
+      "props": {
+        "text": "Hello World",
+        "type": "h1",
+        "style": {
+          "color": "red"
+        }
+      }
+    }
+  ]
 }

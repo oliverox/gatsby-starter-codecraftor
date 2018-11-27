@@ -6,23 +6,24 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `pagesJson`,
-        path: `${__dirname}/src/pagesJson`,
+        name: 'pagesMeta',
+        path: `${__dirname}/src/pagesMeta`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    // 'gatsby-transformer-sharp',
-    // 'gatsby-plugin-sharp',
+    'gatsby-transformer-json',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-starter-codecraftor',
         short_name: 'starter',
