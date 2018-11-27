@@ -1,0 +1,63 @@
+{
+  "pageTitle": "Sample Page",
+  "ui": "blueprintJS",
+  "globalCss": {},
+  "components": [
+    {
+      "id": "header",
+      "componentName": "HeaderContainer",
+      "props": {},
+      "components": [
+        {
+          "id": "heading001",
+          "componentName": "Heading",
+          "props": {
+            "text": "Hello World",
+            "type": "h1",
+            "style": {}
+          }
+        },
+        {
+          "id": "heading002",
+          "componentName": "Heading",
+          "props": {
+            "text": "This is my subtitle",
+            "type": "h3",
+            "style": {
+              "color": "hotpink"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "componentName": "Container",
+      "props": {},
+      "components": [
+        {
+          "id": "layout001",
+          "componentName": "Layout",
+          "props": {
+            "type": "twoColumns",
+            "style": {}
+          },
+          "components": [
+            {
+              "id": "imageCarousel001",
+              "componentName": "Carousel",
+              "props": {
+                "imageSize": "medium",
+                "slidesToShow": 3,
+                "slidesToScroll": 1,
+                "imageStretch": false,
+                "navigation": 1,
+                "autoPlay": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
