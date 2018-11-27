@@ -1,0 +1,34 @@
+{
+  "pageTitle": "my-page-title",
+  "ui": "blueprintJS",
+  "globalCss": {},
+  "components": [
+    {
+      "id": "header",
+      "componentName": "HeaderContainer",
+      "props": {},
+      "components": [
+        {
+          "id": "heading001",
+          "componentName": "Heading",
+          "props": {
+            "text": "Hello World",
+            "type": "h1",
+            "style": {}
+          }
+        },
+        {
+          "id": "heading002",
+          "componentName": "Heading",
+          "props": {
+            "text": "This is my subtitle",
+            "type": "h3",
+            "style": {
+              "color": "hotpink"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
