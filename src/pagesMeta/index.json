@@ -1,53 +1,35 @@
 {
+  "name": "index",
   "pageTitle": "Home page",
-  "ui": "blueprintJS",
+  "ui": "blueprint",
   "globalCss": {},
   "root": {
-    "componentName": "HeaderContainer",
-    "props": {},
-    "children": ["heading001", "heading002", "container0011"]
+    "componentName": "Container",
+    "props": "{\"style\":{\"color\":\"red\",\"backgroundColor\":\"#f2f2f2\"}}",
+    "children": ["heading001", "heading002", "container001"]
   },
+  "imports": ["Heading", "Container", "Span"],
   "components": [
     {
       "id": "heading001",
       "componentName": "Heading",
-      "props": {
-        "text": "Hello World",
-        "type": "h1",
-        "style": {
-          "color": "red"
-        }
-      }
+      "props": "{\"text\":\"Hello World\",\"type\":\"h1\",\"style\":{\"color\":\"blue\"}}"
     },
     {
       "id": "heading002",
       "componentName": "Heading",
-      "props": {
-        "text": "This is my subtitle",
-        "type": "h3",
-        "style": {
-          "color": "hotpink"
-        }
-      }
+      "props": "{\"text\":\"This is my subtitle\",\"type\":\"h3\",\"style\":{\"color\":\"blue\"}}"
     },
     {
       "id": "container001",
       "componentName": "Container",
-      "props": {
-        "style": {
-          "width": 500,
-          "height": 500,
-          "backgroundColor": "red"
-        }
-      },
+      "props": "{\"style\":{\"width\":500,\"height\":500,\"backgroundColor\":\"lightgreen\"}}",
       "children": ["span001"]
     },
     {
       "id": "span001",
       "componentName": "Span",
-      "props": {
-        "text": "I am a span inside a red container"
-      }
+      "props": "{\"text\":\"I am a span inside a red container\"}"
     }
   ]
 }

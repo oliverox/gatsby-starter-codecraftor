@@ -33,6 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
         allFile {
           edges {
             node {
+              name
               fields {
                 slug
               }
@@ -48,9 +49,10 @@ exports.createPages = ({ graphql, actions }) => {
         console.log('> Creating page:', node.fields.slug)
         createPage({
           path: node.fields.slug,
-          component: path.resolve('./src/templates/blank-page.js'),
-          context: { 
+          component: path.resolve('./src/templates/page-craftor.js'),
+          context: {
             slug: node.fields.slug,
+            pageName: node.name,
           },
         })
       })
