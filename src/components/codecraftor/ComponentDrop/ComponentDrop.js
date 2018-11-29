@@ -14,9 +14,13 @@ class ComponentDrop extends React.Component {
   }
 
   handleDrop(e) {
-    console.log('drop event data=', e.dataTransfer.getData('component'))
-    this.setState({
-      isDragOver: false,
+    const { target, page } = this.props
+    const componentName = e.dataTransfer.getData('component')
+    const queryString = `componentName=${componentName}&target=${target}&page=${page}`
+    fetch(`/_cc/add?${queryString}`).then(() => {
+      this.setState({
+        isDragOver: false,
+      })
     })
   }
 
@@ -38,7 +42,7 @@ class ComponentDrop extends React.Component {
   }
 
   render() {
-    const { dropText = 'Drop component here' } = this.props
+    const { dropText } = this.props
     let cn = styles.dropContainer
     if (this.state.isDragOver) {
       cn = `${cn} ${styles.isDragOver}`
@@ -58,3 +62,9 @@ class ComponentDrop extends React.Component {
 }
 
 export default ComponentDrop
+
+ComponentDrop.defaultProps = {
+  target: 'root',
+  page: 'index',
+  dropText: 'Drag & Drop Component Here',
+}

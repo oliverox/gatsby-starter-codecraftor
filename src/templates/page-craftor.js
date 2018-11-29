@@ -11,18 +11,35 @@ class PageCraftor extends React.Component {
     this.state = {
       loading: true,
     }
-    this.initialRender = true
+    this.updated = 0;
     this.components = {}
     this.rootComponent = false
+    this.refreshPage = this.refreshPage.bind(this)
     this.importComponents = this.importComponents.bind(this)
-    this.updateComponents = this.updateComponents.bind(this)
     this.buildDomTree = this.buildDomTree.bind(this)
     this.getComponentIndex = this.getComponentIndex.bind(this)
     this.getPageMetaFromData = this.getPageMetaFromData.bind(this)
     this.getComponentAndItsChildren = this.getComponentAndItsChildren.bind(this)
   }
-
+  
   componentDidMount() {
+    this.refreshPage()
+  }
+
+  componentDidUpdate() {
+    const { data } = this.props;
+    const { updated } = this.getPageMetaFromData(data)
+    console.log(`ComponentDidUpdate: this.updated: ${this.updated} vs ${updated} ` )
+    if (this.updated !== updated) {
+      this.updated = updated
+      this.setState({
+        loading: true
+      })
+      this.refreshPage()
+    }
+  }
+
+  refreshPage() {
     this.importComponents().then(() => {
       this.buildDomTree()
       this.setState({
@@ -30,6 +47,7 @@ class PageCraftor extends React.Component {
       })
     })
   }
+
 
   getPageMetaFromData(data) {
     const { pageName } = this.props.pageContext
@@ -61,19 +79,6 @@ class PageCraftor extends React.Component {
 
   getComponentIndex(componentName) {
     return this.meta.imports.indexOf(componentName)
-  }
-
-  updateComponents() {
-    this.meta = this.getPageMetaFromData(this.props.data)
-    const { props, children } = this.meta.root
-    this.components.root.props = props
-    this.components.root.children = children
-    for (let i = 0; i < this.meta.components.length; i++) {
-      const { id, props = '', children = [] } = this.meta.components[i]
-      this.components[id].props = props
-      this.components[id].children = children
-    }
-    console.log('this.components=', this.components)
   }
 
   importComponents() {
@@ -111,12 +116,7 @@ class PageCraftor extends React.Component {
   }
 
   render() {
-    if (!this.initialRender) {
-      this.updateComponents()
-      this.buildDomTree()
-    } else {
-      this.initialRender = false
-    }
+    console.log('rendering page...')
     return (
       <Layout>
         {this.state.loading ? (
@@ -124,7 +124,9 @@ class PageCraftor extends React.Component {
         ) : (
           <div>
             {this.rootComponent}
-            {process.env.NODE_ENV === 'development' ? <ComponentDrop /> : null}
+            {process.env.NODE_ENV === 'development' ? (
+              <ComponentDrop page={this.meta.name} />
+            ) : null}
           </div>
         )}
       </Layout>
@@ -139,6 +141,7 @@ export const query = graphql`
     allPagesMetaJson {
       edges {
         node {
+          updated
           name
           ui
           pageTitle
