@@ -2,6 +2,7 @@
   width: 300px;
   height: 100%;
   padding: 10px;
+  overflow-y: auto;
 }
 .sidebarTitleContainer {
   display: flex;
@@ -11,4 +12,18 @@
 }
 .sidebarTitleContainer > h3 {
   color: #555;
+}
+.sidebarItem {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+.sidebarItemName {
+  text-transform: capitalize;
+}
+.sidebarItemIcon {
+  padding-right: 10px;
 }

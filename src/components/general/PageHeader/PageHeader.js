@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
+const PageHeader = ({ siteTitle }) => (
   <div
     style={{
       background: 'rebeccapurple',
@@ -30,4 +30,4 @@ const Header = ({ siteTitle }) => (
   </div>
 )
 
-export default Header
+export default PageHeader

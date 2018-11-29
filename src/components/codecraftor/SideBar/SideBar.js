@@ -1,19 +1,39 @@
 import React from 'react'
-import { H3 } from '@blueprintjs/core'
-import styles from './SideBar.module.css';
+import { H3, Card, Elevation, Icon } from '@blueprintjs/core'
+import generalComponentList from '../../general'
 
-const SideBar = ({title = 'Settings'}) => {
+import styles from './SideBar.module.css'
+
+const SideBar = ({ title = 'Settings' }) => {
   const onDragStart = e => {
     e.dataTransfer.setData('text', e.target.id)
     console.log('drag started', e)
   }
-
+  const gcl = Object.keys(generalComponentList)
+  console.log('+++++++++++++++++++++++++++++++ gcl=', gcl)
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.sidebarTitleContainer}>
         <H3>{title}</H3>
       </div>
-      <div
+      {gcl.map((component, index) => {
+        return (
+          <Card
+            key={index}
+            interactive={true}
+            elevation={Elevation.ONE}
+            className={styles.sidebarItem}
+            draggable={true}
+            onDragStart={onDragStart}
+          >
+            <span className={styles.sidebarItemName}>
+              <Icon className={styles.sidebarItemIcon} icon={generalComponentList[component].icon} />
+              {generalComponentList[component].name}
+            </span>
+          </Card>
+        )
+      })}
+      {/* <div
         id="component001"
         style={{
           textAlign: 'center',
@@ -23,9 +43,9 @@ const SideBar = ({title = 'Settings'}) => {
         onDragStart={onDragStart}
       >
         Drag Me
-      </div>
+      </div> */}
     </div>
   )
 }
 
-export default SideBar;
+export default SideBar

@@ -9,4 +9,12 @@ import SideBar from './codecraftor/SideBar/SideBar'
 import EditorLayout from './codecraftor/EditorLayout/EditorLayout'
 import ComponentDrop from './codecraftor/ComponentDrop/ComponentDrop'
 
-export { Header, Image, Layout, Iframe, SideBar, EditorLayout, ComponentDrop }
+export {
+  Header,
+  Image,
+  Layout,
+  Iframe,
+  SideBar,
+  EditorLayout,
+  ComponentDrop,
+}
