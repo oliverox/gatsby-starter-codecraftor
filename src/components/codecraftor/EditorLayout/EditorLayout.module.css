@@ -13,3 +13,9 @@
   margin-top: -50px;
   padding-top: 50px;
 }
+.navbarHeading {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #fff;
+}
