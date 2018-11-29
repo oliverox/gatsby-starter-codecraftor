@@ -1,8 +1,12 @@
-import Image from './Image/Image'
-import Header from './Header/Header'
-import Layout from './Layout/Layout'
-import Iframe from './Iframe/Iframe'
-import SideBar from './SideBar/SideBar'
-import EditorLayout from './EditorLayout/EditorLayout'
+// General components
+import Image from './general/Image/Image'
+import Header from './general/Header/Header'
 
-export { Header, Image, Layout, Iframe, SideBar, EditorLayout }
+// Codecraftor-specific components
+import Layout from './codecraftor/Layout/Layout'
+import Iframe from './codecraftor/Iframe/Iframe'
+import SideBar from './codecraftor/SideBar/SideBar'
+import EditorLayout from './codecraftor/EditorLayout/EditorLayout'
+import ComponentDrop from './codecraftor/ComponentDrop/ComponentDrop'
+
+export { Header, Image, Layout, Iframe, SideBar, EditorLayout, ComponentDrop }

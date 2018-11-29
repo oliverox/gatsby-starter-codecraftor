@@ -1,0 +1,11 @@
+.dropContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  margin: 10px;
+  border: 2px dashed #d5dadf;
+}
+.dropContainer span {
+  color: #a4abb1;
+}

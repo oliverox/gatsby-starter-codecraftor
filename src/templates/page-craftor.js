@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import 'normalize.css'
-import { Layout } from 'components'
+import { Layout, ComponentDrop } from 'components'
 
 class PageCraftor extends React.Component {
   constructor(props) {
@@ -80,7 +80,10 @@ class PageCraftor extends React.Component {
     console.log('importComponents()...')
     this.meta = this.getPageMetaFromData(this.props.data)
     const componentImportArray = this.meta.imports.map(componentName => {
-      return import(`../components/${componentName}/${this.meta.ui}`)
+      console.log(
+        `>> importing ../components/general/${componentName}/${this.meta.ui}`
+      )
+      return import(`../components/general/${componentName}/${this.meta.ui}`)
     })
     return Promise.all(componentImportArray).then(importedComponents => {
       let index = this.getComponentIndex(this.meta.root.componentName)
@@ -115,7 +118,16 @@ class PageCraftor extends React.Component {
       this.initialRender = false
     }
     return (
-      <Layout>{this.state.loading ? 'Loading' : this.rootComponent}</Layout>
+      <Layout>
+        {this.state.loading ? (
+          'Loading'
+        ) : (
+          <div>
+            {this.rootComponent}
+            {process.env.NODE_ENV === 'development' ? <ComponentDrop /> : null}
+          </div>
+        )}
+      </Layout>
     )
   }
 }
