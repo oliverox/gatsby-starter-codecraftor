@@ -5,7 +5,9 @@
   padding: 30px;
   margin: 10px;
   border: 2px dashed #d5dadf;
-}
-.dropContainer span {
   color: #a4abb1;
+}
+.isDragOver {
+  border-color: #364699;
+  color: #364699;
 }

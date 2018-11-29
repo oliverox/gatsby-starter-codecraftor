@@ -6,11 +6,9 @@ import styles from './SideBar.module.css'
 
 const SideBar = ({ title = 'Settings' }) => {
   const onDragStart = e => {
-    e.dataTransfer.setData('text', e.target.id)
-    console.log('drag started', e)
+    e.dataTransfer.setData('component', e.target.getAttribute('data-component'))
   }
   const gcl = Object.keys(generalComponentList)
-  console.log('+++++++++++++++++++++++++++++++ gcl=', gcl)
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.sidebarTitleContainer}>
@@ -20,6 +18,7 @@ const SideBar = ({ title = 'Settings' }) => {
         return (
           <Card
             key={index}
+            data-component={component}
             interactive={true}
             elevation={Elevation.ONE}
             className={styles.sidebarItem}
@@ -27,23 +26,15 @@ const SideBar = ({ title = 'Settings' }) => {
             onDragStart={onDragStart}
           >
             <span className={styles.sidebarItemName}>
-              <Icon className={styles.sidebarItemIcon} icon={generalComponentList[component].icon} />
+              <Icon
+                className={styles.sidebarItemIcon}
+                icon={generalComponentList[component].icon}
+              />
               {generalComponentList[component].name}
             </span>
           </Card>
         )
       })}
-      {/* <div
-        id="component001"
-        style={{
-          textAlign: 'center',
-          border: '1px solid black',
-        }}
-        draggable={true}
-        onDragStart={onDragStart}
-      >
-        Drag Me
-      </div> */}
     </div>
   )
 }

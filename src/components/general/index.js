@@ -1,7 +1,7 @@
 const generalComponentList = {
   Container: {
     name: 'Generic container',
-    icon: 'control' // or 'page-layout'
+    icon: 'control'
   }, 
   Button: {
     name: 'Button',

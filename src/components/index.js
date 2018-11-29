@@ -1,6 +1,6 @@
 // General components
 import Image from './general/Image/Image'
-import Header from './general/Header/Header'
+import PageHeader from './general/PageHeader/PageHeader'
 
 // Codecraftor-specific components
 import Layout from './codecraftor/Layout/Layout'
@@ -10,7 +10,7 @@ import EditorLayout from './codecraftor/EditorLayout/EditorLayout'
 import ComponentDrop from './codecraftor/ComponentDrop/ComponentDrop'
 
 export {
-  Header,
+  PageHeader,
   Image,
   Layout,
   Iframe,
