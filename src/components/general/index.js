@@ -1,12 +1,12 @@
 const generalComponentList = {
-  Button: {
-    name: 'Button',
-    icon: 'widget-button'
-  },
   Container: {
     name: 'Generic container',
     icon: 'control' // or 'page-layout'
   }, 
+  Button: {
+    name: 'Button',
+    icon: 'widget-button'
+  },
   PageHeader: {
     name: 'Page Header',
     icon: 'widget-header'
