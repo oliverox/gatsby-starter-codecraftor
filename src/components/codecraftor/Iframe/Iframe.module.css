@@ -3,5 +3,19 @@
 }
 .iframe {
   border: 0;
-  border-left: 1px solid #DFE1E5;
+  margin-top: -42px;
+  padding-top: 42px;
+}
+.urlContainer {
+  height: 42px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #DFE1E5;
+}
+.domainName {
+  color: #929191;
+  font-size: 13px;
+  padding-right: 2px;
 }
