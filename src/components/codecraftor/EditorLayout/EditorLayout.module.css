@@ -2,6 +2,7 @@
   background-color: #fff;
 }
 .body {
+  /* font-size: 13px; */
   font-family: 'Montserrat', sans-serif;
 }
 .editorContainer {
@@ -18,4 +19,8 @@
   align-items: center;
   font-weight: 600;
   color: #fff;
+}
+.navbarButton > span {
+  color: #fff;
+  font-size: 13px;
 }

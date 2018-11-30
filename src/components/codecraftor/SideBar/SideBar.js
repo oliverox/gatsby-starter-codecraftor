@@ -1,5 +1,5 @@
 import React from 'react'
-import { H3, Card, Elevation, Icon } from '@blueprintjs/core'
+import { Card, Elevation, Icon } from '@blueprintjs/core'
 import generalComponentList from '../../general'
 
 import styles from './SideBar.module.css'
@@ -12,7 +12,7 @@ const SideBar = ({ title = 'Settings' }) => {
   return (
     <div className={styles.sidebarContainer}>
       <div className={styles.sidebarTitleContainer}>
-        <H3>{title}</H3>
+        {/* <H3>{title}</H3> */}
       </div>
       {gcl.map((component, index) => {
         return (

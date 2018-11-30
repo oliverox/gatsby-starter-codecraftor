@@ -58,16 +58,24 @@ const EditorLayout = ({ children }) => (
               </NavbarHeading>
               <NavbarDivider />
               <Button
-                className={Classes.MINIMAL}
-                style={{ color: '#fff' }}
+                className={`${Classes.MINIMAL} ${styles.navbarButton}`}
                 icon={<Icon style={{ color: '#fff' }} icon="home" />}
                 text="Home"
               />
               <Button
-                className={Classes.MINIMAL}
-                style={{ color: '#fff' }}
+                className={`${Classes.MINIMAL} ${styles.navbarButton}`}
                 icon={<Icon style={{ color: '#fff' }} icon="document" />}
                 text="Pages"
+              />
+              <Button
+                className={`${Classes.MINIMAL} ${styles.navbarButton}`}
+                icon={<Icon style={{ color: '#fff' }} icon="code-block" />}
+                text="Components"
+              />
+              <Button
+                className={`${Classes.MINIMAL} ${styles.navbarButton}`}
+                icon={<Icon style={{ color: '#fff' }} icon="style" />}
+                text="Themes"
               />
             </NavbarGroup>
           </Navbar>
